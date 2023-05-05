@@ -1,0 +1,31 @@
+.title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 60px;
+
+    &--small {
+        font-size: 36px;
+    }
+}
+.subtitle {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+}
+.text {
+    &--20 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 26px;
+    }
+    &--17 {
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+    }
+    &--16 {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}

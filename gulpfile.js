@@ -10,9 +10,9 @@ const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
-/* const svgSprite = require('gulp-svg-sprite');
- */const fonter = require('gulp-fonter');
+const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
+const htmlmin = require('gulp-htmlmin');
 
 function fonts() {
     return src('src/fonts/*.*')
@@ -28,7 +28,7 @@ function fonts() {
 function images() {
     return src(['src/images/*.*', '!src/images/*.svg'])
         .pipe(newer('dist/images'))
-        .pipe(avif({ quality : 50}))
+        .pipe(avif({ quality : 70}))
 
         .pipe(newer('dist/images'))
         .pipe(src('src/images/*.*'))
@@ -41,18 +41,17 @@ function images() {
         .pipe(dest('dist/images'))
 }
 
-/* function sprite() {
-    return src('dist/images/*.svg')
-        .pipe(svgSprite({
-            mode: {
-                stack: {
-                    sprite: '../sprite.svg',
-                    example: true
-                }
-            }
-        }))
-        .pipe(dest('dist/images'))
-} */
+function icons() {
+    return src('src/icons/**/*')
+        .pipe(dest('dist/icons'))
+};
+
+function html() {
+    return src('src/*.html')
+        .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(dest('dist/'))
+        .pipe(browserSync.stream())
+};
 
 function scripts() {
     return src('src/js/**/*.js')
@@ -63,7 +62,7 @@ function scripts() {
 }
 
 function styles() {
-    return src('src/scss/**/*.+(scss|sass)')
+    return src('src/scss/*.scss')
         .pipe(autoprefixer())
         .pipe(concat('style.min.scss'))
         .pipe(scss({ outputStyle: 'compressed' }))
@@ -75,7 +74,7 @@ function watching() {
     watch(['src/scss/**/*.+(scss|sass)'], styles)
     watch(['src/images/*.*'], images)
     watch(['src/js/**/*.js'], scripts)
-    watch(['src/**/*.html']).on('change', browserSync.reload)
+    watch(['src/*.html']).on('change', html)
 }
 
 function browsersync() {
@@ -103,8 +102,8 @@ exports.fonts = fonts;
 exports.images = images;
 exports.scripts = scripts;
 exports.watching = watching;
-exports.sprite = sprite;
+exports.icons = icons;
 
-exports.build = series(cleanDist, styles, scripts, building)
+exports.build = series(cleanDist, html, styles, scripts, images, icons, fonts, building);
 
-exports.default = parallel(styles, scripts, browsersync, watching)
+exports.default = parallel(html, fonts, styles, scripts, browsersync, watching);
