@@ -1,0 +1,44 @@
+.info {
+    margin: 0 auto;
+    margin-top: 130px;
+    text-align: center;
+    &__wrapper {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        justify-content: space-around;
+    }
+    &__item {
+        width: 270px;
+        min-height: 50px;
+        padding: 30px 25px 30px;
+        border: 1px solid $color-grey;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+        border-radius: 25px;
+    }
+    &__round {
+        height: 60px;
+        width: 60px;
+        background-color: $color-green;
+        border-radius: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    &__img {
+        width: 30px;
+        height: auto;
+        border-radius: 0;
+    }
+    &__item-title {
+        margin-top: 20px;
+    }
+    &__item-text {
+        margin-top: 20px;
+    }
+    &__subtitle {
+        margin-top: 15px;
+    }
+}

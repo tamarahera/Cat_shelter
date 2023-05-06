@@ -2,17 +2,18 @@
     font-weight: 500;
     font-size: 48px;
     line-height: 60px;
-
-    &--small {
+    text-transform: capitalize;
+    &--small {    
         font-size: 36px;
     }
 }
-.subtitle {
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 26px;
-}
+
 .text {
+    &--24 {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
     &--20 {
         font-weight: 500;
         font-size: 20px;
