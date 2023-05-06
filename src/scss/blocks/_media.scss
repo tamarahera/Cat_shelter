@@ -25,6 +25,9 @@
         }
     }
     .about {
+        &::after {
+            right: 0px;
+        }
         &__tabs {
             max-height: 550px;
             &-btn {
@@ -37,6 +40,14 @@
                     background: #fff;
                 }
             }
+        }
+    }
+    .cat {
+        &__wrapper {
+            gap: 20px;
+        }
+        &__item {
+            cursor: none;
         }
     }
 }
@@ -73,6 +84,9 @@
             grid-column: 2/3;
         }
     }
+    .cat {
+        margin-top: 450px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -106,6 +120,7 @@
         margin-top: 300px;
     }
     .about {
+        margin-top: 100px;
         &::after {
             width: 95%;
         }
@@ -131,7 +146,21 @@
             grid-template-rows: 820px;
 
         }
-
+    }
+    .cat {
+        margin-top: 250px;
+        &__wrapper {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 280px);
+            grid-auto-rows: 280px;
+        }
+        &__item {
+            grid-row: unset!important;
+            grid-column: unset!important;
+            &-back {
+                font-size: 14px;
+            }
+        }
     }
 }
 
@@ -184,22 +213,30 @@
             bottom: -325px;
             right: 50%;
             transform: translateX(50%);
+            &::after {
+                left: -10px;
+                bottom: -10px;
+            }
         }
     }
     .info {
-        margin-top: 400px;
+        margin-top: 420px;
     }
     .about {
         .divider {
             margin: 0 auto;
             margin-bottom: 10px;
         }
+        .title {
+            text-align: center;
+        }
         &::after {
-            width: 100%;
+            width: 105%;
+            height: 130%;
             border-radius: 0;
         }
         &__text {
-            padding: 60px 10px 10px;
+            padding: 60px 0px 10px;
         }
         &__tabs {
             bottom: -335px;
@@ -214,6 +251,13 @@
         .divider {
             margin: 0 auto;
             margin-bottom: 10px;
+        }
+    }
+    .cat {
+        margin-top: 420px;
+        &__wrapper {
+            grid-template-columns: 280px;
+            justify-content: center;
         }
     }
 

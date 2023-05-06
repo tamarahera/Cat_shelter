@@ -1,11 +1,14 @@
 .about {
     position: relative;
     margin-top: 130px;
+    .title {
+        text-align: left;
+    }
     &::after {
         content: '';
         display: block;
         position: absolute;
-        right: 0;
+        right: -125px;
         top: 0;
         background-color: $color-grey;
         height: 100%;

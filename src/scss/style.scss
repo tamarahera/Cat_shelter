@@ -42,7 +42,7 @@ img {
     border-radius: 25px;
 }
 
-dl, ul {
+dl, ul, p {
     margin: 0;
     padding: 0;
 }
@@ -56,12 +56,12 @@ dl, ul {
 }
 
 .button {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    border: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    
+    border: none;
     text-align: center;
     border-radius: 25px;
     background-color: $color-green;
     transition: .2s all;
-    font-weight: 500;
     font-size: 17px;
     line-height: 26px;
     &:hover {
