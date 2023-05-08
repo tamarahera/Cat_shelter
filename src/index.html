@@ -51,7 +51,7 @@
             </div>
         </section>
         <section class="info">
-            <div class="container">
+            <div class="container">round
                 <h3 class="title title--small">Can I Adopt a Cat?</h3>
                 <hr class="divider">
                 </hr>
@@ -460,8 +460,9 @@
                     <li class="steps__item">
                         <div class="steps__num">1</div>
                         <h4 class="text--24"> Get more information about the cat</h4>
-                        <div class="steps__descr">
-                            <p>It is necessary to learn more about your future pet, because each animal is unique. So learn more about:</p>
+                        <div class="steps__descr text--16">
+                            <p>It is necessary to learn more about your future pet, because each animal is unique. So
+                                learn more about:</p>
                             <ul class="steps__descr-list">
                                 <li>Character and habits of the cat.</li>
                                 <li>His medical history.</li>
@@ -474,7 +475,7 @@
                     <li class="steps__item">
                         <div class="steps__num">2</div>
                         <h4 class="text--24">Submit an application</h4>
-                        <div class="steps__descr">
+                        <div class="steps__descr text--16">
                             <p>Ready to adopt a kitten? Fill out a simple application for this. We have to make sure
                                 that the cat is in good hands. The most important questions are:</p>
                             <ul class="steps__descr-list">
@@ -487,16 +488,22 @@
                     <li class="steps__item">
                         <div class="steps__num">3</div>
                         <h4 class="text--24">Prepare your home for a cat</h4>
-                        <div class="steps__descr">
-                            <p>It is important to fully prepare for the appearance of a kitten in the house. Make sure you create a safe environment for the kitten in your home and set up a room with everything you need, including a bed, food and water bowls, a litter tray, and toys.</p>
-                            <p>You will also need a basket or cage to carry the kitten and some food that the previous owner fed it. It's also a good idea to find a vet you trust and make an appointment a few days after you pick up the kitten.</p>
+                        <div class="steps__descr text--16">
+                            <p>It is important to fully prepare for the appearance of a kitten in the house. Make sure
+                                you create a safe environment for the kitten in your home and set up a room with
+                                everything you need, including a bed, food and water bowls, a litter tray, and toys.</p>
+                            <p>You will also need a basket or cage to carry the kitten and some food that the previous
+                                owner fed it. It's also a good idea to find a vet you trust and make an appointment a
+                                few days after you pick up the kitten.</p>
                         </div>
                     </li>
                     <li class="steps__item">
                         <div class="steps__num">4</div>
                         <h4 class="text--24">Bring your cat home!</h4>
-                        <div class="steps__descr">
-                            <p>Congratulations, you now have a furry baby! <br> Remember that we are responsible for those we have tamed.<p/>
+                        <div class="steps__descr text--16">
+                            <p>Congratulations, you now have a furry baby! <br> Remember that we are responsible for
+                                those we have tamed.
+                                <p />
                         </div>
                     </li>
                 </ul>
@@ -504,12 +511,86 @@
         </section>
         <section class="help">
             <div class="container">
-
+                <div class="help__wrapper">
+                    <div class="help__box">
+                        <img src="images/help.avif" alt="cat" class="help__box-img">
+                    </div>
+                    <div class="help__content">
+                        <h2 class="title">Help to our shelter</h2>
+                        <hr class="divider">
+                        <p class="help__subtitle text--17">
+                            The shelter exists thanks to the donations of patrons and private benefactors. That is why
+                            we are always grateful for any charitable help.
+                        </p>
+                        <ul class="help__list">
+                            <li class="help__item">
+                                <div class="help__item-round">
+                                    <img alt="heart" class="help__item-img" src="icons/hand-holding-heart-solid.svg">
+                                </div>
+                                <h4 class="text--24">Volunteer help</h4>
+                                <p class="help__item-descr text--16">Do you want to help us personally? Feed the animals, clean the area or pick up medicine from the post office. Our administration will provide information on current requests.</p>
+                            </li>
+                            <li class="help__item">
+                                <div class="help__item-round">
+                                    <img alt="medical" class="help__item-img" src="icons/hand-holding-medical-solid.svg">
+                                </div>
+                                <h4 class="text--24">Things And clothes</h4>
+                                <p class="help__item-descr text--16">We always need animal feed, veterinary medicines, building materials for the construction and repair of old enclosures. Blankets, bedding and towels, jackets for employees are also needed.</p>
+                            </li>
+                            <li class="help__item">
+                                <div class="help__item-round">
+                                    <img alt="dollar" class="help__item-img" src="icons/hand-holding-dollar-solid.svg">
+                                </div>
+                                <h4 class="text--24">financial support</h4>
+                                <p class="help__item-descr text--16">Our shelter runs almost entirely on donations. Donations are
+                                    fully spent on keeping and caring for dogs and cats, including providing a full
+                                    cycle of treatment for seriously ill animals. </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="contact">
             <div class="container">
+                <h2 class="title">Contact us</h2>
+                <hr class="divider">
+                <div class="contact__wrapper">
+                    <form class="contact__form" action="#">
+                        <h5 class="contact__form-title">Here you can ask us any question:</h5>
+                        <label class="visually-hidden" for="name">Name</label>
+                        <input class="contact__form-input" id="name" name="user_name" type="text" placeholder="Name">
 
+                        <label class="visually-hidden" for="email">E-Mail</label>        
+                        <input class="contact__form-input" id="email" name="user_email" type="email" placeholder="E-Mail">
+
+                        <label class="visually-hidden" for="message">Message</label>                      
+                        <textarea class="contact__form-area" id="message" name="user_message" placeholder="Message"></textarea>
+
+                        <button class="contact__form-btn button" type="submit">Send a message</button>
+                    </form>
+                    <dl class="contact__info">
+                        <dt class="contact__info-title">Address:</dt>
+                        <dd class="contact__info-descr text-16">
+                            <address>
+                                Heroiv Mariupol St., 28b, Kyiv, Ukraine, 02000
+                            </address>
+                        </dd>
+                        <dt class="contact__info-title">Working hours:</dt>
+                        <dd class="contact__info-descr text-16">Mo-Fr, from 10:00 a.m. to 5:00 p.m</dd>
+                        <dt class="contact__info-title">Phone number:</dt>
+                        <dd class="contact__info-descr text-16">
+                            <a href="tel: 80123456789">+38 012 34 56 789</a>
+                        </dd>
+                        <dt class="contact__info-title">E-mail:</dt>
+                        <dd class="contact__info-descr text-16">
+                            <a href="mailto:happy@paws.com.ua">happy@paws.com.ua</a>
+                        </dd>
+                    </dl>
+                    <div class="contact__box">
+                        <img src="images/contact.avif" alt="cat" class="contact__box-img">
+                    </div>
+                </div>
             </div>
         </section>
     </main>
