@@ -29,8 +29,37 @@
 </head>
 
 <body>
-    <header class="header"></header>
-        <main>
+    <header class="header">
+        <div class="header__wrapper">
+            <a class="logo">
+                <img src="icons/cat-solid.svg" alt="logo" class="logo-img">
+                <p class="logo-text">paws</p>
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__list-item">
+                        <a href="#about" class="header__list-link">About</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#cat" class="header__list-link">Our cats</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#steps" class="header__list-link">Steps</a>
+                    </li>
+                    <li class="header__list-item">
+                        <a href="#story" class="header__list-link">Happy stories</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a href="#contact" class="header__contact button">Contact</a>
+        </div>
+    </header>
+    <main>
         <section class="promo">
             <div class="container">
                 <div class="promo__wrapper">
@@ -42,7 +71,7 @@
                             Do you believe in a life where every pet has a cozy and safe home? We do! Therefore, we
                             offer people to adopt a kitten from our shelter for free. Join us! Find a friend right now.
                         </p>
-                        <button class="promo__btn text--17 button" type="button">Choose a kitty</button>
+                        <a href="#cat" class="promo__btn text--17 button">Choose a kitty</a>
                     </div>
                     <div class="promo__images">
                         <img src="images/promo.avif" alt="promo_cat" class="promo__img">
@@ -54,7 +83,7 @@
             <div class="container">round
                 <h3 class="title title--small">Can I Adopt a Cat?</h3>
                 <hr class="divider">
-                </hr>
+                <hr>
                 <p class="info__subtitle text--17">There are many things to think about when it comes to getting a cat
                     or kitten. You need to consider your own lifestyle and home environment, and consider whether you
                     can adapt both to keep your cat happy and healthy.</p>
@@ -86,7 +115,7 @@
                 </ul>
             </div>
         </section>
-        <section class="about">
+        <section class="about" id="about">
             <div class="container">
                 <div class="about__wrapper">
                     <div class="about__tabs">
@@ -136,7 +165,7 @@
                 </div>
             </div>
         </section>
-        <section class="cat">
+        <section class="cat" id="cat">
             <div class="container">
                 <h2 class="title">Our cats</h2>
                 <hr class="divider">
@@ -377,9 +406,8 @@
                 </div>
                 <button class="button cat__btn" type="button">See more</button>
             </div>
-            </div>
         </section>
-        <section class="story">
+        <section class="story" id="story">
             <div class="container">
                 <h3 class="title title--small">Happy stories</h3>
                 <hr class="divider">
@@ -405,35 +433,38 @@
                             <div class="story__img"><img src="images/story01.avif" alt="cat"></div>
                             <div class="story__text">
                                 <p class="story__name text--17">Anna and David with Apricot:</p>
-                                <blockquote class="story__descr text--16" cite="Anna and David">Little Apricot was found
-                                    with his stomach ripped open. Fortunately, the doctors managed to save his life, but
-                                    the cat was in the hospital for a long time. We were very worried about him and
-                                    tried to help him as much as possible. He has been a part of our family for 5 months
-                                    now. We are very glad that everything turned out well!</blockquote>
+                                <blockquote class="story__descr text--16" cite="Anna_David">
+                                    Little Apricot was found with his stomach ripped open. Fortunately, the doctors
+                                    managed to save his life, but the cat was in the hospital for a long time. We were
+                                    very worried about him and tried to help him as much as possible. He has been a part
+                                    of our family for 5 months now. We are very glad that everything turned out well!
+                                </blockquote>
                             </div>
                         </li>
                         <li class="story__item">
                             <div class="story__img"><img src="images/story03.avif" alt="cat"></div>
                             <div class="story__text">
                                 <p class="story__name text--17">Sofia and Daniel with Lily, Jasmine and Nut:</p>
-                                <blockquote class="story__descr text--16" cite="Sofia and Daniel"> Lily, Jasmine and Nut
-                                    are two sisters and a brother. At first we wanted to take only Lily, but she missed
-                                    her cat family very much. So we decided to take them all. There are now five
-                                    children in our big house: two of ours and three kittens. And you know what? It was
-                                    the best decision of our entire life.</blockquote>
+                                <blockquote class="story__descr text--16" cite="Sofia_Daniel">
+                                    Lily, Jasmine and Nut are two sisters and a brother. At first we wanted to take only
+                                    Lily, but she missed her cat family very much. So we decided to take them all. There
+                                    are now five children in our big house: two of ours and three kittens. And you know
+                                    what? It was the best decision of our entire life.
+                                </blockquote>
                             </div>
                         </li>
                         <li class="story__item">
                             <div class="story__img"><img src="images/story04.avif" alt="cat"></div>
                             <div class="story__text">
                                 <p class="story__name text--17">Alex and Elizabeth with Pearl</p>
-                                <blockquote class="story__descr text--16" cite="Alex">I have always been indifferent to
-                                    cats, but my daughter Elizabeth has been begging me for a cat. On her birthday, I
-                                    decided to surprise her. In the shelter, I asked them to show me Pearl, she was
-                                    lying away from everyone. But as soon as she was in my arms, she did not want to
-                                    come down. For the first time in my life, I was impressed by a cat. My daughter was
-                                    overjoyed. Unbelievable, but now besides Elizabeth, Pearl is another treasure of my
-                                    heart.</blockquote>
+                                <blockquote class="story__descr text--16" cite="Alex">
+                                    I have always been indifferent to cats, but my daughter Elizabeth has been begging
+                                    me for a cat. On her birthday, I decided to surprise her. In the shelter, I asked
+                                    them to show me Pearl, she was lying away from everyone. But as soon as she was in
+                                    my arms, she did not want to come down. For the first time in my life, I was
+                                    impressed by a cat. My daughter was overjoyed. Unbelievable, but now besides
+                                    Elizabeth, Pearl is another treasure of my heart.
+                                </blockquote>
                             </div>
                         </li>
                         <li class="story__item">
@@ -452,7 +483,7 @@
                 </div>
             </div>
         </section>
-        <section class="steps">
+        <section class="steps" id="steps">
             <div class="container">
                 <h2 class="title">What's Next?</h2>
                 <hr class="divider">
@@ -501,9 +532,7 @@
                         <div class="steps__num">4</div>
                         <h4 class="text--24">Bring your cat home!</h4>
                         <div class="steps__descr text--16">
-                            <p>Congratulations, you now have a furry baby! <br> Remember that we are responsible for
-                                those we have tamed.
-                                <p />
+                            <p>Congratulations, you now have a furry baby! <br> Remember that we are responsible forthose we have tamed.</p>
                         </div>
                     </li>
                 </ul>
@@ -528,21 +557,27 @@
                                     <img alt="heart" class="help__item-img" src="icons/hand-holding-heart-solid.svg">
                                 </div>
                                 <h4 class="text--24">Volunteer help</h4>
-                                <p class="help__item-descr text--16">Do you want to help us personally? Feed the animals, clean the area or pick up medicine from the post office. Our administration will provide information on current requests.</p>
+                                <p class="help__item-descr text--16">Do you want to help us personally? Feed the
+                                    animals, clean the area or pick up medicine from the post office. Our administration
+                                    will provide information on current requests.</p>
                             </li>
                             <li class="help__item">
                                 <div class="help__item-round">
-                                    <img alt="medical" class="help__item-img" src="icons/hand-holding-medical-solid.svg">
+                                    <img alt="medical" class="help__item-img"
+                                        src="icons/hand-holding-medical-solid.svg">
                                 </div>
                                 <h4 class="text--24">Things And clothes</h4>
-                                <p class="help__item-descr text--16">We always need animal feed, veterinary medicines, building materials for the construction and repair of old enclosures. Blankets, bedding and towels, jackets for employees are also needed.</p>
+                                <p class="help__item-descr text--16">We always need animal feed, veterinary medicines,
+                                    building materials for the construction and repair of old enclosures. Blankets,
+                                    bedding and towels, jackets for employees are also needed.</p>
                             </li>
                             <li class="help__item">
                                 <div class="help__item-round">
                                     <img alt="dollar" class="help__item-img" src="icons/hand-holding-dollar-solid.svg">
                                 </div>
                                 <h4 class="text--24">financial support</h4>
-                                <p class="help__item-descr text--16">Our shelter runs almost entirely on donations. Donations are
+                                <p class="help__item-descr text--16">Our shelter runs almost entirely on donations.
+                                    Donations are
                                     fully spent on keeping and caring for dogs and cats, including providing a full
                                     cycle of treatment for seriously ill animals. </p>
                             </li>
@@ -551,7 +586,7 @@
                 </div>
             </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact">
             <div class="container">
                 <h2 class="title">Contact us</h2>
                 <hr class="divider">
@@ -561,11 +596,13 @@
                         <label class="visually-hidden" for="name">Name</label>
                         <input class="contact__form-input" id="name" name="user_name" type="text" placeholder="Name">
 
-                        <label class="visually-hidden" for="email">E-Mail</label>        
-                        <input class="contact__form-input" id="email" name="user_email" type="email" placeholder="E-Mail">
+                        <label class="visually-hidden" for="email">E-Mail</label>
+                        <input class="contact__form-input" id="email" name="user_email" type="email"
+                            placeholder="E-Mail">
 
-                        <label class="visually-hidden" for="message">Message</label>                      
-                        <textarea class="contact__form-area" id="message" name="user_message" placeholder="Message"></textarea>
+                        <label class="visually-hidden" for="message">Message</label>
+                        <textarea class="contact__form-area" id="message" name="user_message"
+                            placeholder="Message"></textarea>
 
                         <button class="contact__form-btn button" type="submit">Send a message</button>
                     </form>
@@ -580,7 +617,7 @@
                         <dd class="contact__info-descr text-16">Mo-Fr, from 10:00 a.m. to 5:00 p.m</dd>
                         <dt class="contact__info-title">Phone number:</dt>
                         <dd class="contact__info-descr text-16">
-                            <a href="tel: 80123456789">+38 012 34 56 789</a>
+                            <a href="tel:80123456789">+38 012 34 56 789</a>
                         </dd>
                         <dt class="contact__info-title">E-mail:</dt>
                         <dd class="contact__info-descr text-16">
@@ -614,11 +651,11 @@
                 <li class="footer__info-item">
                     <img src="icons/phone-solid.svg" alt="phone" class="footer__info-img">
                     <p class="footer__info-text">
-                        <a href="tel: 80123456789">+38 012 34 56 789</a>
+                        <a href="tel:80123456789">+38 012 34 56 789</a>
                     </p>
                 </li>
                 <li class="footer__info-item">
-                    <img src="icons/clock-solid.svg" alt="clock" class="footer__info-img">
+                    <img src="icons/clock-regular.svg" alt="clock" class="footer__info-img">
                     <p class="footer__info-text">Mo-Fr, 10:00 - 17:00</p>
                 </li>
             </ul>

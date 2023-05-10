@@ -1,6 +1,6 @@
 .promo {
     position: relative;
-    margin: 90px auto 0 auto;
+    margin: 150px auto 0 auto;
     &::after {
         content: '';
         display: block;
@@ -33,6 +33,7 @@
         }
     }
     &__btn {
+        display: inline-block;
         margin-top: 45px;
         padding: 14px 50px;
     }

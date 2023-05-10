@@ -1,0 +1,76 @@
+.header {
+    padding: 25px 60px;
+    background-color: $color-black;
+    width: 100%;
+    height: fit-content;
+    position: fixed;
+    top: 0;
+    z-index: 20;
+    &__wrapper {
+        position: relative;
+        display: grid;
+        grid-template-columns: 170px auto 170px;
+        align-items: center;
+        gap: 100px;
+    }
+    &__nav {
+
+    }
+    &__list {
+        display: flex;
+        gap: 50px;
+        list-style: none;
+        &-link {
+            color: $color-grey;
+            font-size: 17px;
+            font-weight: 500;
+            transition: .3s all;
+            border-bottom: 0px solid $color-black;
+            padding-bottom: 0px;
+            &:hover {
+                color: $color-green;
+                border-bottom: 2px solid $color-green;
+                padding-bottom: 4px;
+            }
+        }
+    }
+    &__contact {
+        justify-self: flex-end;
+        padding: 6px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px;
+        background-color: $color-pink;
+        font-weight: 500;
+    }
+}
+
+.hamburger {
+    display: none;
+    position: relative;
+    height: 25px;
+    width: 35px;
+    border: none;
+    background-color: unset;
+    justify-self: flex-end;
+    transition: .2s all;
+    span {
+        transition: .2s all;
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-grey;
+        &:first-child {
+            top: 0;
+        }
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &:nth-child(3) {
+            bottom: 0;
+        }
+    }
+}
