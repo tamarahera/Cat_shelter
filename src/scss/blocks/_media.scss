@@ -140,7 +140,7 @@
             position: absolute;
             bottom: -370px;
             left: 50px;
-            max-height: 450px;
+            height: 450px;
         }
         &__text {
             grid-column: 2/3;
@@ -231,7 +231,8 @@
             bottom: -170px;
             left: unset;
             right: 40px;
-            max-height: 350px;
+            height: 350px;
+            width: 250px;
             &-btns {
                 bottom: 20px;
             }

@@ -33,6 +33,10 @@
     color: $color-black;
 }
 
+.animate__animated.animate__fadeIn {
+    --animate-duration: 4s;
+}
+
 .container {
     width: 1140px;
     margin: 0 auto;

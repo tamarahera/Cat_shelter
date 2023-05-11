@@ -1,4 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    'use strict';
+
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.header__nav');
 
@@ -8,11 +10,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nav.addEventListener('click', (e) => {
-        console.log(e.target);
-        console.log(e.currentTarget);
-
         if (e.target.classList.contains('header__list-link') && nav.classList.contains('header__nav--active')) {
             nav.classList.remove('header__nav--active');
         }
     });
-})
+
+
+
+    let slideIndex = 1,
+        stop = false;
+    const items = document.querySelectorAll('.story__item');
+    
+    function showSlides(n) {
+        if (n > items.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = items.length;
+        }
+
+        items.forEach(item => {
+            item.classList.add('animate__animated');
+            item.classList.remove('story__item--active');
+        })
+
+        items[slideIndex - 1].classList.add('story__item--active'); 
+    }
+
+    showSlides(slideIndex);
+
+    function plusSlide(n) {
+        showSlides(slideIndex += n);
+    }
+
+    try {
+        const prevBtn = document.querySelector('.story__btn--left'),
+              nextBtn = document.querySelector('.story__btn--right');
+
+        prevBtn.addEventListener('click', () => {
+            plusSlide(-1);
+            items[slideIndex - 1].classList.remove('animate__slideInLeft');
+            items[slideIndex - 1].classList.add('animate__slideInRight');
+        });
+        nextBtn.addEventListener('click', () => {
+            plusSlide(1);
+            items[slideIndex - 1].classList.remove('animate__slideInRight');
+            items[slideIndex - 1].classList.add('animate__slideInLeft');
+        });
+    } catch(e) {}
+
+});

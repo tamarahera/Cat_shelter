@@ -11,8 +11,6 @@
         height: 80%;
         background-color: $color-grey;
     }
-}
-.story {
     &__wrapper {
         position: relative;
     }
@@ -48,7 +46,7 @@
         display: none;
         gap: 90px;
         grid-template-columns: minmax(auto, 440px) minmax(auto, 420px);
-        grid-template-rows: 1fr;
+        grid-template-rows: 300px;
         justify-content: center;
         &--active {
             display: grid;
