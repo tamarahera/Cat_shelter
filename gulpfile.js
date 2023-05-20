@@ -26,16 +26,19 @@ function fonts() {
 }
 
 function images() {
-    return src(['src/images/*.*', '!src/images/*.svg'])
+    return src(['src/images/*.*', '!src/images/*.svg', '!src/images/meta.*'])
         .pipe(newer('dist/images'))
-        .pipe(avif({ quality : 30}))
+        .pipe(avif({ quality: 30 }))
 
         .pipe(newer('dist/images'))
-        .pipe(src('src/images/*.*'))
+        .pipe(src(['src/images/*.*', '!src/images/meta.*']))
         .pipe(webp())
 
         .pipe(newer('dist/images'))
-        .pipe(src('src/images/*.*'))
+        .pipe(src(['src/images/*.*', '!src/images/meta.*']))
+        .pipe(imagemin())
+
+        .pipe(src('src/images/meta.*'))
         .pipe(imagemin())
 
         .pipe(dest('dist/images'))
@@ -89,12 +92,12 @@ function cleanDist() {
     return src('dist')
         .pipe(clean())
 }
- 
+
 function building() {
     return src([
         'src/*.html'
-    ], {base: 'src'})
-      .pipe(dest('dist'))
+    ], { base: 'src' })
+        .pipe(dest('dist'))
 }
 
 exports.styles = styles;
