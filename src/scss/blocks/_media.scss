@@ -56,9 +56,6 @@
         &__wrapper {
             gap: 20px;
         }
-        &__item {
-            cursor: none;
-        }
     }
     .story {
         &::before {
@@ -262,6 +259,7 @@
             grid-column: unset!important;
             &-back {
                 font-size: 14px;
+                line-height: 20px;
             }
         }
     }
@@ -460,6 +458,9 @@
         &__wrapper {
             grid-template-columns: 280px;
             justify-content: center;
+        }
+        &__item {
+            cursor: none;
         }
     }
     .story {
