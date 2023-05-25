@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
+    //hamburger
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.header__nav');
 
@@ -16,11 +17,10 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
 
-
-    let slideIndex = 1,
-        stop = false;
+    //slides
+    let slideIndex = 1;
     const items = document.querySelectorAll('.story__item');
-    
+
     function showSlides(n) {
         if (n > items.length) {
             slideIndex = 1;
@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
             item.classList.remove('story__item--active');
         })
 
-        items[slideIndex - 1].classList.add('story__item--active'); 
+        items[slideIndex - 1].classList.add('story__item--active');
     }
 
     showSlides(slideIndex);
@@ -46,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     try {
         const prevBtn = document.querySelector('.story__btn--left'),
-              nextBtn = document.querySelector('.story__btn--right');
+            nextBtn = document.querySelector('.story__btn--right');
 
         prevBtn.addEventListener('click', () => {
             plusSlide(-1);
@@ -58,12 +58,13 @@ window.addEventListener('DOMContentLoaded', () => {
             items[slideIndex - 1].classList.remove('animate__slideInRight');
             items[slideIndex - 1].classList.add('animate__slideInLeft');
         });
-    } catch(e) {}
+    } catch (e) { }
 
-    
+
+    //tabs
     const tabsWrapper = document.querySelector('.about__tabs-btns'),
-          tab = document.querySelectorAll('.about__tabs-btn'),
-          content = document.querySelectorAll('.about__tabs-item');
+        tab = document.querySelectorAll('.about__tabs-btn'),
+        content = document.querySelectorAll('.about__tabs-item');
 
     function hideTabContent() {
         content.forEach(item => {
@@ -86,8 +87,8 @@ window.addEventListener('DOMContentLoaded', () => {
     tabsWrapper.addEventListener('click', (e) => {
         const target = e.target;
         console.log(target);
-        if (target.classList.contains('about__tabs-btn') || 
-        target.parentNode.classList.contains('about__tabs-btn')) {
+        if (target.classList.contains('about__tabs-btn') ||
+            target.parentNode.classList.contains('about__tabs-btn')) {
             tab.forEach((item, index) => {
                 if (target == item || target.parentNode == item) {
                     hideTabContent();
@@ -106,8 +107,24 @@ window.addEventListener('DOMContentLoaded', () => {
         hideTabContent();
         showTabContent(tabIndex);
     }
-    setInterval(function() {
+    setInterval(function () {
         console.log(tabIndex)
         showTabs(tabIndex += 1);
     }, 6000);
+
+    
+    //accordion
+
+    const btns = document.querySelectorAll('.steps__title-btn'),
+    blocks = document.querySelectorAll('.steps__descr');
+
+    blocks.forEach(item => {;
+        item.classList.add('animate__animated', 'animate__flipInX');
+    });
+
+    btns.forEach(item => {
+        item.addEventListener('click', function()  {
+            this.classList.toggle('steps__title-btn--active');
+        });
+    });
 });

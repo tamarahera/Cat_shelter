@@ -84,6 +84,9 @@ function browsersync() {
     browserSync.init({
         server: {
             baseDir: 'dist/'
+        },
+        ui: {
+            port: 8080
         }
     });
 }
