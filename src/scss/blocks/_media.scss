@@ -39,7 +39,8 @@
             right: 0px;
         }
         &__tabs {
-            max-height: 550px;
+            height: 550px;
+            width: 320px;
             &-btn {
                 width: 60px;
                 height: 8px;
@@ -152,11 +153,11 @@
             grid-template-columns: 1fr 520px;
         }
         &__box {
-            bottom: -73%;
+            bottom: -83%;
         }
     }
     .contact {
-        margin-top: 450px;
+        margin-top: 490px;
         &__wrapper {
             grid-template-columns: minmax(auto, 500px);
             grid-template-rows: auto;
@@ -416,7 +417,7 @@
         }
         &__images {
             width: 100%;
-            bottom: -325px;
+            bottom: -395px;
             right: 50%;
             transform: translateX(50%);
             &::after {
@@ -426,7 +427,7 @@
         }
     }
     .info {
-        margin-top: 420px;
+        margin-top: 490px;
     }
     .about {
         .divider {
@@ -454,7 +455,7 @@
         }
     }
     .cat {
-        margin-top: 420px;
+        margin-top: 45  0px;
         &__wrapper {
             grid-template-columns: 280px;
             justify-content: center;
@@ -464,7 +465,7 @@
         }
     }
     .story {
-        margin-top: 40px;
+        margin-top: 100px;
         &::before {
             top: 60px;
             height: 95%;
@@ -492,6 +493,7 @@
         }
     }
     .steps {
+        margin-top: 100px;
         &__item h4{
             font-size: 18px;
             line-height: 20px;
@@ -532,11 +534,11 @@
             width: 250px;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -360px;
+            bottom: -390px;
         }
     }
     .contact {
-        margin-top: 370px;
+        margin-top: 390px;
         &__form {
             margin-top: 20px;
             padding: 40px 15px;            
