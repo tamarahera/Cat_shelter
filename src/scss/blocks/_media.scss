@@ -213,12 +213,12 @@
             grid-template-columns: 1fr;
         }
         &__images {
-            bottom: -230px;
+            bottom: -320px;
             right: 40px;
         }
     }
     .info {
-        margin-top: 300px;
+        margin-top: 380px;
     }
     .about {
         margin-top: 100px;
@@ -269,12 +269,7 @@
             padding: 0 80px;
         }
         &__btn {
-            &--right {
-                right: 0%;
-            }
-            &--left {
-                left: 0%;
-            }
+            z-index: 10;
         }
     }
     .help {
@@ -285,7 +280,7 @@
             grid-template-columns: 1fr;
         }
         &__box {
-            bottom: -470px;
+            bottom: -510px;
         }
     }
     .contact {
@@ -455,7 +450,7 @@
         }
     }
     .cat {
-        margin-top: 45  0px;
+        margin-top: 450px;
         &__wrapper {
             grid-template-columns: 280px;
             justify-content: center;
@@ -584,7 +579,7 @@
 @media (max-width: 420px) {
     .story {
         &__list {
-            padding: 0px 50px;
+            padding: 20px 50px;
         }
         &__btn {
             width: 30px;
