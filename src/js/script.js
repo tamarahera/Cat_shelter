@@ -180,9 +180,25 @@ window.addEventListener('DOMContentLoaded', () => {
             `;
             document.querySelector('.cat__wrapper').appendChild(item);
         });
-
+        addActiveClassCats();
     }
 
+    // show info about cat
+    function addActiveClassCats() {
+        let catCards = document.querySelectorAll('.cat__wrapper .cat__item');
 
+        catCards.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('cat__item--active');
+            });
+
+            item.addEventListener('mouseleave', (e) => {
+                if (item.classList.contains('cat__item--active')) {
+                    item.classList.remove('cat__item--active');
+                }  
+            });
+        });
+    }
+    addActiveClassCats();
 
 });
