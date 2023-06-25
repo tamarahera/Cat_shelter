@@ -108,23 +108,81 @@ window.addEventListener('DOMContentLoaded', () => {
         showTabContent(tabIndex);
     }
     setInterval(function () {
-        console.log(tabIndex)
         showTabs(tabIndex += 1);
     }, 6000);
 
-    
+
     //accordion
 
     const btns = document.querySelectorAll('.steps__title-btn'),
-    blocks = document.querySelectorAll('.steps__descr');
+        blocks = document.querySelectorAll('.steps__descr');
 
-    blocks.forEach(item => {;
+    blocks.forEach(item => {
         item.classList.add('animate__animated', 'animate__flipInX');
     });
 
     btns.forEach(item => {
-        item.addEventListener('click', function()  {
+        item.addEventListener('click', function () {
             this.classList.toggle('steps__title-btn--active');
         });
     });
+
+    //load more elements 
+
+    const btnLoadMore = document.querySelector('[data-btn="loadMore"]');
+
+    const getResource = async (url) => {
+        let res = await fetch(url);
+
+        if (!res.ok) {
+            throw new Error(`Couldn't not fetch ${url}, status: ${res.status}`);
+        }
+
+        return await res.json();
+    };
+
+    btnLoadMore.addEventListener('click', function () {
+        getResource('http://localhost:3000/cats')
+            .then(res => createItem(res))
+            .catch(error => console.log(error));
+
+        this.remove();
+    });
+
+    function createItem(response) {
+        let sex;
+
+        response.forEach(({ name, srcImg, srcSex, text }) => {
+            let item = document.createElement('div');
+            item.classList.add('cat__item');
+            if ((/venus/ig).test(srcSex)) {
+                sex = 'female';
+            } else if ((/mars/ig).test(srcSex)) {
+                sex = 'male';
+            }
+
+            item.innerHTML = `
+                <div class="cat__item-front">
+                    <picture>
+                        <source srcset="${srcImg}.avif" type="image/avif">
+                        <source srcset="${srcImg}.webp" type="image/webp">
+
+                        <img src="${srcImg}.jpg" alt="cat" class="cat__item-img">
+                    </picture>
+                    <div class="cat__item-info">
+                        <p class="cat__item-name">${name}</p>
+                        <img src="${srcSex}" alt="${sex}" class="cat__item-sex">
+                    </div>
+                </div>
+                <div class="cat__item-back text--17">
+                    ${text}
+                </div>
+            `;
+            document.querySelector('.cat__wrapper').appendChild(item);
+        });
+
+    }
+
+
+
 });
