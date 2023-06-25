@@ -1,0 +1,70 @@
+{
+    "cats": [
+        {   
+            "name": "Teddy, 5 mounths",
+            "srcImg": "images/cat07",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Teddy is a purr in a plush coat. Super sociable and playful cat. Gentle and affectionate in nature. Looking for a warm home and a loving owner."
+        },
+        {   
+            "name": "Marquise, 7 mounths",
+            "srcImg": "images/cat08",
+            "srcSex": "icons/venus-solid.svg",
+            "text": "Marquise is the kindest cat queen in the world. She so wants to receive love and give it immensely in return. Manners throughout truly royal. I really need a home for her fluffy Charm."
+        },
+        {   
+            "name": "Matyash, 3 years",
+            "srcImg": "images/cat09",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Matyash is just an incredibly affectionate and gentle fluffy. He likes to sit on your hands and hugs very much. He has one favorite toy that he likes to play with."
+        },
+        {   
+            "name": "Twix, 9 mounths",
+            "srcImg": "images/cat10",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Twix is devoted and grateful for even a modicum of attention. Big and tender soul. He really needs caring hands that will protect him from troubles. And the trouble in the life of this kid has already been - betrayal. We decided to give him the name Twix - so that he can live sweetly in the future."
+        },
+        {   
+            "name": "Boris, 7 mounths",
+            "srcImg": "images/cat11",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Boris is a real predator and protector. He likes to hunt mice and moles very much. Boris will be a useful neighbor and a great friend."
+        },
+        {   
+            "name": "Bella, 2 years",
+            "srcImg": "images/cat12",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Bella was at home, but she was handed over to a shelter as an unnecessary thing. Sweet, gentle, timid girl Bella is waiting for her man. Bella is soft as a pie and loves to spend time on hands."
+        },
+        {   
+            "name": "Jane, 6 mounths",
+            "srcImg": "images/cat13",
+            "srcSex": "icons/venus-solid.svg",
+            "text": "Jane is looking for a home. By nature, she is gentle, sensitive, purring. Who dreams of an adult and well-bred kitten, she is just for you."
+        },
+        {   
+            "name": "Olive, 3 years",
+            "srcImg": "images/cat14",
+            "srcSex": "icons/venus-solid.svg",
+            "text": "Olive is a little, funny and charming beauty. She enjoys playing with toys, jumping on your hands and rumbles. Olive will be the best friend for the whole family."
+        },
+        {   
+            "name": "Sveta, 9 mounths",
+            "srcImg": "images/cat15",
+            "srcSex": "icons/venus-solid.svg",
+            "text": "Young tabby cat, affectionate, calm. Prefers communication with a person than with relatives. If you were looking for just such a sprat, take it soon. Sveta misses the person very much."
+        },
+        {   
+            "name": "Rolik, 4 years",
+            "srcImg": "images/cat16",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "A wonderful family cat in white socks. He likes to be in nature and he is quite independent, but he will love to spend time with you on hands."
+        },
+        {   
+            "name": "Noah, 5 years",
+            "srcImg": "images/cat17",
+            "srcSex": "icons/mars-solid.svg",
+            "text": "Noah is an adult cat, but he's still a kitten at heart. Very active and social, likes to spend time with other cats."
+        }
+    ]
+}

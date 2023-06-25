@@ -60,7 +60,7 @@ function scripts() {
     return src('src/js/**/*.js')
         .pipe(concat('script.min.js'))
         .pipe(uglify())
-        .pipe(dest("dist/js"))
+        .pipe(dest('dist/js'))
         .pipe(browserSync.stream())
 }
 
@@ -70,6 +70,12 @@ function styles() {
         .pipe(concat('style.min.scss'))
         .pipe(scss({ outputStyle: 'compressed' }))
         .pipe(dest('dist/css'))
+        .pipe(browserSync.stream())
+}
+
+function json() {
+    return src('src/*.json')
+        .pipe(dest('dist/'))
         .pipe(browserSync.stream())
 }
 
@@ -110,6 +116,6 @@ exports.scripts = scripts;
 exports.watching = watching;
 exports.icons = icons;
 
-exports.build = series(cleanDist, html, styles, scripts, images, icons, fonts, building);
+exports.build = series(cleanDist, html, styles, scripts, images, icons, fonts, json, building);
 
-exports.default = parallel(html, fonts, styles, scripts, browsersync, watching);
+exports.default = parallel(html, fonts, styles, scripts, json, browsersync, watching);

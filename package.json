@@ -37,6 +37,7 @@
     "gulp-ttf2woff2": "^4.0.1",
     "gulp-uglify-es": "^3.0.0",
     "gulp-webp": "^4.0.1",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "json-server": "^0.17.3"
   }
 }
