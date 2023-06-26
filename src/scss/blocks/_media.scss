@@ -252,12 +252,10 @@
         margin-top: 250px;
         &__wrapper {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(3, 280px);
+            grid-template-rows: 280px;
             grid-auto-rows: 280px;
         }
         &__item {
-            grid-row: unset!important;
-            grid-column: unset!important;
             &-back {
                 font-size: 14px;
                 line-height: 20px;
@@ -467,9 +465,6 @@
         }
         &__list {
             padding: 0px 60px;
-        }
-        &__text {
-            margin-top: 0;
         }
         &__descr {
             &::after, &::before {

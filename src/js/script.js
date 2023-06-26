@@ -160,7 +160,7 @@ window.addEventListener('DOMContentLoaded', () => {
             } else if ((/mars/ig).test(srcSex)) {
                 sex = 'male';
             }
-
+            item.setAttribute('data-filter-content', `${sex}`)
             item.innerHTML = `
                 <div class="cat__item-front">
                     <picture>
@@ -181,6 +181,7 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector('.cat__wrapper').appendChild(item);
         });
         addActiveClassCats();
+        filter();
     }
 
     // show info about cat
@@ -192,7 +193,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 item.classList.add('cat__item--active');
             });
 
-            item.addEventListener('mouseleave', (e) => {
+            item.addEventListener('click', () => {
+                item.classList.add('cat__item--active');
+            });
+
+            item.addEventListener('mouseleave', () => {
                 if (item.classList.contains('cat__item--active')) {
                     item.classList.remove('cat__item--active');
                 }  
@@ -201,4 +206,43 @@ window.addEventListener('DOMContentLoaded', () => {
     }
     addActiveClassCats();
 
+    //filter 
+    const filter = () => {
+        const menuBtns = document.querySelector('.cat__filter'),
+            buttons = document.querySelectorAll('.cat__filter-btn'),
+            contentAll = document.querySelectorAll('.cat__item');
+
+            const typeFilter = (contentType) => {
+            contentAll.forEach(item => {
+                item.style.display = 'none';
+                item.classList.remove('animate__animated', 'animate__fadeInLeft');
+            });
+
+            if (contentType) {
+                contentType.forEach(item => {
+                    item.style.display = 'block';
+                    item.classList.add('animate__animated', 'animate__fadeInLeft');
+                });
+            };
+        };
+
+        menuBtns.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target && target.tagName == 'BUTTON') {
+                buttons.forEach(item => item.classList.remove('cat__filter-btn--active'));
+                target.classList.add('cat__filter-btn--active');
+
+                let attribute = target.getAttribute('data-filter-btn'),
+                    items;
+                if (attribute === 'all') {
+                    items = contentAll;
+                } else {
+                    items = document.querySelectorAll(`[data-filter-content="${attribute}"]`);
+                }
+
+                typeFilter(items);
+            }
+        });
+    };
+    filter();
 });
