@@ -9,6 +9,8 @@ const clean = require('gulp-clean');
 const avif = require('gulp-avif');
 const webp = require('gulp-webp');
 const imagemin = require('gulp-imagemin');
+const imageminWebp = require('imagemin-webp');
+const mozjpeg = require('imagemin-mozjpeg');
 const newer = require('gulp-newer');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
@@ -27,19 +29,25 @@ function fonts() {
 
 function images() {
     return src(['src/images/*.*', '!src/images/*.svg', '!src/images/meta.*'])
-        .pipe(newer('dist/images'))
-        .pipe(avif({ quality: 30 }))
+        .pipe(avif({ quality: 40 }))
 
-        .pipe(newer('dist/images'))
-        .pipe(src(['src/images/*.*', '!src/images/meta.*']))
+        .pipe(src(['src/images/*.*', '!src/images/*.svg']))
+        .pipe(imagemin([
+            mozjpeg({quality: 40})
+        ]))
+        
+        .pipe(dest('dist/images'))
+}
+
+function imagesWebp() {
+    return src(['dist/images/*.jpg', '!dist/images/*.svg', '!dist/images/meta.*'])
         .pipe(webp())
 
         .pipe(newer('dist/images'))
-        .pipe(src(['src/images/*.*', '!src/images/meta.*']))
-        .pipe(imagemin())
-
-        .pipe(src('src/images/meta.*'))
-        .pipe(imagemin())
+        .pipe(src('dist/images/*.webp'))
+        .pipe(webp([
+            imageminWebp({quality: 1})
+        ]))
 
         .pipe(dest('dist/images'))
 }
@@ -81,7 +89,6 @@ function json() {
 
 function watching() {
     watch(['src/scss/**/*.+(scss|sass)'], styles)
-    watch(['src/images/*.*'], images)
     watch(['src/js/**/*.js'], scripts)
     watch(['src/*.html']).on('change', html)
 }
@@ -111,11 +118,12 @@ function building() {
 
 exports.styles = styles;
 exports.fonts = fonts;
-exports.images = images;
 exports.scripts = scripts;
 exports.watching = watching;
 exports.icons = icons;
+exports.images = images;
+exports.imagesWebp = imagesWebp;
 
-exports.build = series(cleanDist, html, styles, scripts, images, icons, fonts, json, building);
+exports.build = series(cleanDist, html, styles, scripts, images, imagesWebp, icons, fonts, json, building);
 
 exports.default = parallel(html, fonts, styles, scripts, json, browsersync, watching);
