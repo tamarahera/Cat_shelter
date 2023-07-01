@@ -15,6 +15,7 @@ const newer = require('gulp-newer');
 const fonter = require('gulp-fonter');
 const ttf2woff2 = require('gulp-ttf2woff2');
 const htmlmin = require('gulp-htmlmin');
+const webpack = require("webpack-stream");
 
 function fonts() {
     return src('src/fonts/*.*')
@@ -65,12 +66,36 @@ function html() {
 };
 
 function scripts() {
-    return src('src/js/**/*.js')
-        .pipe(concat('script.min.js'))
-        .pipe(uglify())
+    return src("./src/js/main.js")
+        .pipe(webpack({
+            mode: 'development',
+            output: {
+                filename: 'script.js'
+            },
+            watch: false,
+            devtool: "source-map",
+            module: {
+                rules: [
+                    {
+                        test: /\.m?js$/,
+                        exclude: /(node_modules|bower_components)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                            }
+                        }
+                    }
+                ]
+            }
+        }))
         .pipe(dest('dist/js'))
-        .pipe(browserSync.stream())
-}
+        .on("end", browserSync.reload);
+};
 
 function styles() {
     return src('src/scss/*.scss')
@@ -104,6 +129,12 @@ function browsersync() {
     });
 }
 
+function php() {
+    return src('src/*.php')
+    .pipe(dest('dist/'))
+    .pipe(browserSync.stream())
+}
+
 function cleanDist() {
     return src('dist')
         .pipe(clean())
@@ -124,6 +155,6 @@ exports.icons = icons;
 exports.images = images;
 exports.imagesWebp = imagesWebp;
 
-exports.build = series(cleanDist, html, styles, scripts, images, imagesWebp, icons, fonts, json, building);
+exports.build = series(cleanDist, html, styles, scripts, images, imagesWebp, icons, fonts, json, php, building);
 
-exports.default = parallel(html, fonts, styles, scripts, json, browsersync, watching);
+exports.default = parallel(html, fonts, styles, scripts, json, php, browsersync, watching);
