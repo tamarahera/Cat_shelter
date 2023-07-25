@@ -70,5 +70,15 @@
             object-fit: cover;
         }
     }
+    &__policy {
+        display: flex;
+        align-items: center;
+        &-checkbox {
+            margin-right: 8px;
+        }
+        &-link {
+            text-decoration: underline;
+            color: $color-pink-dark;
+        }
+    }
 }
-
