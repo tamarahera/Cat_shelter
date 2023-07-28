@@ -1,8 +1,17 @@
 const form = () => {
     const form = document.querySelector('form'),
         inputs = document.querySelectorAll('input'),
-        textareas = document.querySelectorAll('textarea');
+        textareas = document.querySelectorAll('textarea'),
+        checkbox = document.querySelector('.contact__policy-checkbox');
 
+    if (localStorage.getItem('isChecked')) {
+        checkbox.checked = true;
+    }
+
+    checkbox.addEventListener('change', () => {
+        localStorage.setItem('isChecked', true);
+    });
+        
     const message = {
         loading: 'Loading...',
         success: 'Thanks! We will answer as soon as possible.',
