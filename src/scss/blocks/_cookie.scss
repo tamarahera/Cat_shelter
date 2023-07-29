@@ -1,0 +1,31 @@
+.cookie {
+    position: fixed;
+    z-index: 100;
+    bottom: -100%;
+    width: 100%;
+    padding: 10px 45px;
+    background-color: $color-green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.2);
+    transition: .4s bottom;
+    &__text {
+        font-size: 14px;
+        text-align: center;
+    }
+    &__link {
+        font-weight: 700;
+    }
+    &__btn {
+        padding: 2px 20px;
+        font-size: 14px;
+        background-color: #ffcf5e;
+    }
+    &--active {
+        bottom: 0;
+    }
+}
+

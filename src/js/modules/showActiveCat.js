@@ -1,6 +1,5 @@
 const showActiveCat = () => {
     let catCards = document.querySelectorAll('.cat__wrapper .cat__item');
-    console.log(catCards)
     catCards.forEach(item => {
         item.addEventListener('mouseenter', () => {
             item.classList.add('cat__item--active');

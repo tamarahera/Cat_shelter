@@ -6,6 +6,7 @@ import showActiveCat from "./modules/showActiveCat";
 import slides from "./modules/slides";
 import tabs from "./modules/tabs";
 import form from "./modules/form";
+import cookie from "./modules/cookie";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
     slides();
     tabs();
     form();
+    cookie();
 });

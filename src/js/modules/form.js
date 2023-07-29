@@ -24,7 +24,6 @@ const form = () => {
             method: 'POST',
             body: data
         });
-
         return await result.text();
     };
 

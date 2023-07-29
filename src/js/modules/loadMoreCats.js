@@ -9,18 +9,16 @@ const loadMoreCats = () => {
         if (!res.ok) {
             throw new Error(`Couldn't not fetch ${url}, status: ${res.status}`);
         }
-
         return await res.json();
     };
 
     btnLoadMore.addEventListener('click', function () {
         getResource('http://localhost:3000/cats')
             .then(res => {
-                createItem(res)
+                createItem(res);
+                this.remove();
             })
             .catch(error => console.log(error))
-
-            this.remove();
     });
 
     function createItem(response) {

@@ -16,8 +16,7 @@
     <meta property="og:title" content="Paws Cat Shelter">
     <meta property="og:description"
         content="Paws is a large shelter for homeless cats in the city of Kyiv, Ukraine. Here you can find a new friend for you and your family.">
-    <meta property="og:image"
-        content="images/meta.jpg">
+    <meta property="og:image" content="images/meta.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -25,8 +24,7 @@
     <meta property="twitter:title" content="Paws Cat Shelter">
     <meta property="twitter:description"
         content="Paws is a large shelter for homeless cats in the city of Kyiv, Ukraine. Here you can find a new friend for you and your family.">
-    <meta property="twitter:image"
-        content="images/meta.jpg">
+    <meta property="twitter:image" content="images/meta.jpg">
 
     <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-icon-60x60.png">
@@ -222,10 +220,12 @@
                 </p>
                 <ul class="cat__filter">
                     <li class="cat__filter-item">
-                        <button class="button cat__filter-btn cat__filter-btn--active" type="button" data-filter-btn="all">All cats</button>
+                        <button class="button cat__filter-btn cat__filter-btn--active" type="button"
+                            data-filter-btn="all">All cats</button>
                     </li>
                     <li class="cat__filter-item">
-                        <button class="button cat__filter-btn" type="button" data-filter-btn="female">Female cats</button>
+                        <button class="button cat__filter-btn" type="button" data-filter-btn="female">Female
+                            cats</button>
                     </li>
                     <li class="cat__filter-item">
                         <button class="button cat__filter-btn" type="button" data-filter-btn="male">Male Cats</button>
@@ -575,24 +575,25 @@
                     <form class="contact__form" action="#">
                         <h5 class="contact__form-title">Here you can ask us any question:</h5>
                         <label class="visually-hidden" for="name">Name</label>
-                        <input class="contact__form-input" id="name" name="user_name" type="text" placeholder="Name" required>
+                        <input class="contact__form-input" id="name" name="user_name" type="text" placeholder="Name"
+                            required>
 
                         <label class="visually-hidden" for="email">E-Mail</label>
                         <input class="contact__form-input" id="email" name="user_email" type="email"
                             placeholder="E-Mail" required>
 
                         <label class="visually-hidden" for="message">Message</label>
-                        <textarea class="contact__form-area" id="message" name="user_message"
-                            placeholder="Message" required></textarea>
+                        <textarea class="contact__form-area" id="message" name="user_message" placeholder="Message"
+                            required></textarea>
 
                         <div class="contact__policy">
-                            <input class="contact__policy-checkbox" type="checkbox" required="required" id="policy" name="policy">
+                            <input class="contact__policy-checkbox" type="checkbox" required id="policy" name="policy">
                             <label for="policy">
-                                I agree to 
+                                I agree to
                                 <a class="contact__policy-link" href="policy.html" target="_blank">privacy policy</a>
                             </label>
                         </div>
-                    
+
                         <button class="contact__form-btn button" type="submit">Send a message</button>
                     </form>
                     <dl class="contact__info">
@@ -674,7 +675,12 @@
         <hr class="footer__divider">
         <p class="footer__rights">© 2023 Tamara Herashchenko. All Rights Reserved.</p>
     </footer>
-
+    <div class="cookie">
+        <p class="cookie__text">
+            We are using cookies to ensure that we give you the best experience. By continuing to use this site, you agree to our policy. To read more about how we use cookies read our <a class="cookie__link" href="policy.html" target="_blank">Privacy Policy</a>
+        </p>
+        <button class="cookie__btn button" type="button">Close</button>
+    </div>
 
     <script src='js/script.js'></script>
 </body>
