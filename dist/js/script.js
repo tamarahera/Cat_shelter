@@ -25,6 +25,9 @@ var accordion = function accordion() {
     item.addEventListener('click', function () {
       this.classList.toggle('steps__title-btn--active');
     });
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') this.classList.toggle('steps__title-btn--active');
+    });
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (accordion);
@@ -406,7 +409,7 @@ var loadMoreCats = function loadMoreCats() {
   }();
   btnLoadMore.addEventListener('click', function () {
     var _this = this;
-    getResource('http://localhost:3000/cats').then(function (res) {
+    getResource('https://tamarahera.github.io/projects/cat-shelter/db.json').then(function (res) {
       createItem(res);
       _this.remove();
     }).catch(function (error) {
@@ -428,6 +431,7 @@ var loadMoreCats = function loadMoreCats() {
         sex = 'male';
       }
       item.setAttribute('data-filter-content', "".concat(sex));
+      item.setAttribute('tabindex', 0);
       item.innerHTML = "\n                <div class=\"cat__item-front\">\n                    <picture>\n                        <source srcset=\"".concat(srcImg, ".avif\" type=\"image/avif\">\n                        <source srcset=\"").concat(srcImg, ".webp\" type=\"image/webp\">\n\n                        <img src=\"").concat(srcImg, ".jpg\" alt=\"cat\" class=\"cat__item-img\">\n                    </picture>\n                    <div class=\"cat__item-info\">\n                        <p class=\"cat__item-name\">").concat(name, "</p>\n                        <img src=\"").concat(srcSex, "\" alt=\"").concat(sex, "\" class=\"cat__item-sex\">\n                    </div>\n                </div>\n                <div class=\"cat__item-back text--17\">\n                    ").concat(text, "\n                </div>\n            ");
       document.querySelector('.cat__wrapper').appendChild(item);
     });
@@ -458,10 +462,18 @@ var showActiveCat = function showActiveCat() {
     item.addEventListener('mouseenter', function () {
       item.classList.add('cat__item--active');
     });
+    item.addEventListener('focus', function () {
+      item.classList.add('cat__item--active');
+    });
     item.addEventListener('click', function () {
       item.classList.add('cat__item--active');
     });
     item.addEventListener('mouseleave', function () {
+      if (item.classList.contains('cat__item--active')) {
+        item.classList.remove('cat__item--active');
+      }
+    });
+    item.addEventListener('blur', function () {
       if (item.classList.contains('cat__item--active')) {
         item.classList.remove('cat__item--active');
       }

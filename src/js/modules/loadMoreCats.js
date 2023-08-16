@@ -13,7 +13,7 @@ const loadMoreCats = () => {
     };
 
     btnLoadMore.addEventListener('click', function () {
-        getResource('http://localhost:3000/cats')
+        getResource('https://tamarahera.github.io/projects/cat-shelter/db.json')
             .then(res => {
                 createItem(res);
                 this.remove();
@@ -26,13 +26,14 @@ const loadMoreCats = () => {
 
         response.forEach(({ name, srcImg, srcSex, text }) => {
             let item = document.createElement('div');
-            item.classList.add('cat__item');
+                item.classList.add('cat__item');
             if ((/venus/ig).test(srcSex)) {
                 sex = 'female';
             } else if ((/mars/ig).test(srcSex)) {
                 sex = 'male';
             }
-            item.setAttribute('data-filter-content', `${sex}`)
+            item.setAttribute('data-filter-content', `${sex}`);
+            item.setAttribute('tabindex', 0)
             item.innerHTML = `
                 <div class="cat__item-front">
                     <picture>

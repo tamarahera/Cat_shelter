@@ -112,6 +112,13 @@ function json() {
         .pipe(browserSync.stream())
 }
 
+function copyDist() {
+    return src('dist/**')
+        .pipe(newer('dist/*'))
+        .pipe(dest('../Portfolio_github/projects/cat-shelter/'))
+        .pipe(browserSync.stream())
+}
+
 function watching() {
     watch(['src/scss/**/*.+(scss|sass)'], styles)
     watch(['src/js/**/*.js'], scripts)
@@ -154,7 +161,8 @@ exports.watching = watching;
 exports.icons = icons;
 exports.images = images;
 exports.imagesWebp = imagesWebp;
+exports.copy = copyDist;
 
-exports.build = series(cleanDist, html, styles, scripts, images, imagesWebp, icons, fonts, json, php, building);
+exports.build = series(cleanDist, html, styles, scripts, images, imagesWebp, icons, fonts, json, php, copyDist, building);
 
-exports.default = parallel(html, fonts, styles, scripts, json, php, browsersync, watching);
+exports.default = parallel(html, fonts, styles, scripts, json, php,  copyDist, browsersync, watching);

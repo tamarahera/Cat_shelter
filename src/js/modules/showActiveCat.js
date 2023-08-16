@@ -5,11 +5,21 @@ const showActiveCat = () => {
             item.classList.add('cat__item--active');
         });
 
+        item.addEventListener('focus', () => {
+            item.classList.add('cat__item--active');
+        });
+
         item.addEventListener('click', () => {
             item.classList.add('cat__item--active');
         });
 
         item.addEventListener('mouseleave', () => {
+            if (item.classList.contains('cat__item--active')) {
+                item.classList.remove('cat__item--active');
+            }
+        });
+
+        item.addEventListener('blur', () => {
             if (item.classList.contains('cat__item--active')) {
                 item.classList.remove('cat__item--active');
             }

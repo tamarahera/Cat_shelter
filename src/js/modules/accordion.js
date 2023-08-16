@@ -10,6 +10,10 @@ const accordion = () => {
         item.addEventListener('click', function () {
             this.classList.toggle('steps__title-btn--active');
         });
+        item.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter')
+            this.classList.toggle('steps__title-btn--active');
+        });
     });
 };
 
