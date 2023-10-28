@@ -45,10 +45,10 @@ __webpack_require__.r(__webpack_exports__);
 var cookie = function cookie() {
   var modal = document.querySelector('.cookie');
   var modalBtn = modal.querySelector('button');
-  if (!localStorage.getItem('cookie')) {
+  if (!localStorage.getItem('cats_storage')) {
     modal.classList.add('cookie--active');
     modalBtn.addEventListener('click', function () {
-      localStorage.setItem('cookie', 'true');
+      localStorage.setItem('cats_storage', 'true');
       modal.classList.remove('cookie--active');
     });
   } else {
@@ -418,7 +418,7 @@ var loadMoreCats = function loadMoreCats() {
   });
   function createItem(response) {
     var sex;
-    response.forEach(function (_ref2) {
+    response.cats.forEach(function (_ref2) {
       var name = _ref2.name,
         srcImg = _ref2.srcImg,
         srcSex = _ref2.srcSex,
