@@ -23,8 +23,8 @@ const loadMoreCats = () => {
 
     function createItem(response) {
         let sex;
-
-        response.forEach(({ name, srcImg, srcSex, text }) => {
+        
+        response.cats.forEach(({ name, srcImg, srcSex, text }) => {
             let item = document.createElement('div');
                 item.classList.add('cat__item');
             if ((/venus/ig).test(srcSex)) {
